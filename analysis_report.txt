@@ -1,0 +1,147 @@
+========================================
+       SECURITY LOG ANALYSIS REPORT
+========================================
+
+Log File: security.log
+
+Total Events:              1,250
+Successful Logins:           940
+Failed Logins:               310
+Unique IP Addresses:          87
+Unique Users:                 24
+
+----------------------------------------
+TOP FAILED-LOGIN SOURCES
+----------------------------------------
+
+192.168.1.50        47 failures
+10.0.0.15           31 failures
+172.16.0.25         18 failures
+
+----------------------------------------
+ACCOUNT-TARGET ANALYSIS
+----------------------------------------
+
+Suspicious IP: 192.168.1.50
+
+Targeted Accounts:
+    admin:   12 attempts
+    root:    7 attempts
+    test:    3 attempts
+
+Suspicious IP: 10.0.0.15
+
+Targeted Accounts:
+    admin:   10 attempts
+    guest:   6 attempts
+    root:    5 attempts
+
+Suspicious IP: 172.16.0.25
+
+Targeted Accounts:
+    guest:   6 attempts
+    test:    6 attempts
+    backup:  6 attempts
+
+----------------------------------------
+SUSPICIOUS ACTIVITY
+----------------------------------------
+
+Potential Brute Force:        3
+Suspicious Login Sequences:   2
+High-Severity Alerts:         2
+
+----------------------------------------
+RECOMMENDATION
+----------------------------------------
+
+Review the high-severity alerts and
+investigate the associated IP addresses
+and user accounts.
+
+----------------------------------------
+DETAILED SECURITY ALERTS
+----------------------------------------
+
+========================================
+        SECURITY ALERT
+========================================
+
+Alert Type: Potential Brute Force
+Severity: HIGH
+
+Source IP: 192.168.1.50
+Target Account: admin
+Failed Attempts: 15
+Time Window: 45 seconds
+
+Reason:
+15 failed authentication attempts were
+detected from the same source within
+the configured threshold.
+
+========================================
+        SECURITY ALERT
+========================================
+
+Alert Type: Potential Brute Force
+Severity: HIGH
+
+Source IP: 10.0.0.15
+Target Account: admin
+Failed Attempts: 10
+Time Window: 27 seconds
+
+Reason:
+10 failed authentication attempts were
+detected from the same source within
+the configured threshold.
+
+========================================
+        SECURITY ALERT
+========================================
+
+Alert Type: Potential Brute Force
+Severity: MEDIUM
+
+Source IP: 172.16.0.25
+Target Account: guest
+Failed Attempts: 6
+Time Window: 15 seconds
+
+Reason:
+6 failed authentication attempts were
+detected from the same source within
+the configured threshold.
+
+========================================
+        SECURITY ALERT
+========================================
+
+Alert Type: Potentially Suspicious Authentication Sequence
+Severity: HIGH
+
+Source IP: 192.168.1.50
+Target Account: admin
+Failed Attempts: 8
+Successful Login: 1
+
+Reason:
+Multiple failed authentication attempts were followed
+by a successful authentication from the same source.
+
+========================================
+        SECURITY ALERT
+========================================
+
+Alert Type: Potentially Suspicious Authentication Sequence
+Severity: HIGH
+
+Source IP: 10.0.0.15
+Target Account: root
+Failed Attempts: 5
+Successful Login: 1
+
+Reason:
+Multiple failed authentication attempts were followed
+by a successful authentication from the same source.
